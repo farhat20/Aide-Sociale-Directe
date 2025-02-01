@@ -1,26 +1,20 @@
 package com.example.demo;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.demo.service.DatabaseService;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import com.example.demo.service.DatabaseService;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
+import jakarta.validation.ValidatorFactory;
+import org.springframework.context.annotation.Configuration;
 
-
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.example.demo")
 @RestController
+@Configuration
 public class DemoApplication {
-
-//	public static void main(String[] args) {
-//		SpringApplication.run(DemoApplication.class, args);
-//	}
-//
-//	@GetMapping
-//	public String hello() {
-//		return "Hello World ";
-//	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
@@ -34,5 +28,10 @@ public class DemoApplication {
 		};
 	}
 
-
+	// ✅ Fix: Register a Validator Bean to resolve "No target Validator set" issue
+	@Bean
+	public Validator validator() {
+		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+		return factory.getValidator();
+	}
 }

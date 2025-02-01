@@ -1,19 +1,21 @@
 package com.example.demo.model.entity;
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Table(name = "D_RSU_CHEF_MENAGE_AID")
+@Getter @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class RsuChefMenage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Integer idcs;
+    @Column(nullable = false, unique = true)
+    private Long idcs;
 
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id;}
-
-    public Integer getIdcs() { return idcs; }
-    public void setIdcs(Integer idcs) { this.idcs = idcs;}
+    private String first_name_fr;
+    private String last_name_fr;
 }

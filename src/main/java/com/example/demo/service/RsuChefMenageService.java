@@ -1,8 +1,10 @@
 package com.example.demo.service;
 
+import com.example.demo.dto.response.RsuChefMenageResponse;
 import java.util.List;
-import java.util.Map;
 
 public interface RsuChefMenageService {
-    List<Map<String, Object>> getAllRsuChefMenages();
+
+    RsuChefMenageResponse rsuChefMenageResponse(Long idcs);
+    List<RsuChefMenageResponse> getAllRsuChefMenage();
 }
