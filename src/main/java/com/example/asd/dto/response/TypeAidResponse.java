@@ -1,17 +1,20 @@
 package com.example.asd.dto.response;
 
+import com.example.asd.mapper.TypeAidMapper;
+import com.example.asd.model.entity.TypeAid;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class TypeAidResponse {
     private Long id;
-    private String label_fr;
-    private String label_ar;
+    private String labelFr;
+    private String labelAr;
 
-    // Getters and Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public String getName() { return label_fr; }
-    public void setName(String name) { this.label_fr = name; }
-
-    public String getDescription() { return label_ar; }
-    public void setDescription(String description) { this.label_ar = description; }
+    public static TypeAidResponse of(TypeAid typeAid) {
+        return TypeAidMapper.INSTANCE.mapToGetTypeAidResponse(typeAid);
+    }
 }

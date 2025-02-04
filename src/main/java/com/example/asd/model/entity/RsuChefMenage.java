@@ -28,5 +28,5 @@ public class RsuChefMenage {
     private String country;
     private String city;
     private Integer family_member_count;
-    private Integer house_hold_count;
+    private Integer house_hold_code;
 }

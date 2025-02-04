@@ -5,13 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.relational.core.sql.In;
 
 @Entity
-@Table(name = "P_TYPE_AID")
+@Table(name = "P_TYPE_MEMBER")
 @Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
-public class TypeAid {
+public class TypeMember {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +18,4 @@ public class TypeAid {
 
     private String label_fr;
     private String label_ar;
-
-
 }

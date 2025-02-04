@@ -25,7 +25,7 @@ public interface RsuChefMenageMapper {
     @Mapping(target = "country", source = "country")
     @Mapping(target = "city", source = "city")
     @Mapping(target = "familyMemberCount", source = "family_member_count")
-    @Mapping(target = "houseHoldCount", source = "house_hold_count")
+    @Mapping(target = "houseHoldCode", source = "house_hold_code")
 
     RsuChefMenageResponse mapToGetRsuChefMenageResponse(RsuChefMenage entity);
 }

@@ -2,6 +2,7 @@ package com.example.asd.dto.response;
 
 import com.example.asd.model.entity.RsuChefMenage;
 import com.example.asd.mapper.RsuChefMenageMapper;
+//import com.example.asd.validation.ValidIdcsChefMenage;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
@@ -35,7 +36,7 @@ public class RsuChefMenageResponse {
     private String country;
     private String city;
     private Integer familyMemberCount;
-    private Integer houseHoldCount;
+    private Integer houseHoldCode;
 
 
     public static RsuChefMenageResponse of(RsuChefMenage rsuChefMenage) {
