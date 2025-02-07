@@ -1,5 +1,6 @@
 package com.example.asd.service.implementation;
 
+import com.example.asd.exception.DomainException;
 import com.example.asd.model.entity.RsuChefMenage;
 import com.example.asd.repository.RsuChefMenageRepository;
 import com.example.asd.service.RsuChefMenageService;
@@ -26,10 +27,10 @@ public class RsuChefMenageServiceImpl implements RsuChefMenageService {
     @Override
     public RsuChefMenageResponse rsuChefMenageResponse(Long idcs) {
         RsuChefMenage result = rsuChefMenageRepository.findByIdcs(idcs)
-                .orElseThrow(() -> new RuntimeException("Chef Menage not found with idcs: " + idcs));
+                .orElseThrow(() -> new DomainException("Chef Menage not found with idcs: " + idcs));
 
-        System.out.println("First Name (AR): " + result.getFirst_name_ar());
-        System.out.println("Last Name (AR): " + result.getLast_name_ar());
+//        System.out.println("First Name (AR): " + result.getFirst_name_ar());
+//        System.out.println("Last Name (AR): " + result.getLast_name_ar());
 
         return RsuChefMenageResponse.of(result);
     }

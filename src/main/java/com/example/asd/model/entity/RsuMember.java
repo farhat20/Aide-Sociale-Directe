@@ -1,20 +1,25 @@
 package com.example.asd.model.entity;
-import com.example.asd.validation.ValidIdcsBeneficiaryFamily;
+
+import com.example.asd.validation.ValidIdcs;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Table(name = "D_RSU_CHEF_MENAGE_AID")
-@Getter @Setter
+@Table(name = "D_RSU_MEMBRE_FAMILLE_AID")
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RsuChefMenage {
+public class RsuMember {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ValidIdcsBeneficiaryFamily
+    @ValidIdcs
     @Column(nullable = false, unique = true)
     private Long idcs;
 

@@ -1,17 +1,16 @@
 package com.example.asd.mapper;
 
-import com.example.asd.dto.response.RsuChefMenageResponse;
-import com.example.asd.model.entity.RsuChefMenage;
+import com.example.asd.dto.response.RsuMemberResponse;
+import com.example.asd.model.entity.RsuMember;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
-public interface RsuChefMenageMapper {
+public interface RsuMemberMapper {
+    RsuMemberMapper INSTANCE = Mappers.getMapper(RsuMemberMapper.class);
 
-    RsuChefMenageMapper INSTANCE = Mappers.getMapper(RsuChefMenageMapper.class);
-
-//    @Mapping(target = "id", source = "id")
+    @Mapping(target = "id", source = "id")
     @Mapping(target = "idcs", source = "idcs")
     @Mapping(target = "firstNameFr", source = "first_name_fr")
     @Mapping(target = "lastNameFr", source = "last_name_fr")
@@ -28,5 +27,6 @@ public interface RsuChefMenageMapper {
     @Mapping(target = "houseHoldCode", source = "house_hold_code")
     @Mapping(target = "cin", source = "cin")
 
-    RsuChefMenageResponse mapToGetRsuChefMenageResponse(RsuChefMenage entity);
+    RsuMemberResponse mapToGetRsuMemberResponse(RsuMember entity);
+
 }
