@@ -8,16 +8,18 @@ import lombok.Data;
 public class CheckBeneficiaryFamilyRequest {
 
     @NotNull(message = "IDCS is required")
+    @Pattern(regexp = "\\d{10}", message = "IDCS must be exactly 10 digits")
     private Long idcs;
 
-    @NotNull(message = "Identity number is required")
-    @Pattern(regexp = "[A-Z0-9]+", message = "Invalid identity number format")
-    private String identityNumber;
 
-    @NotNull(message = "Gender is required")
-    @Pattern(regexp = "[MF]", message = "Gender must be 'M' or 'F'")
-    private String gender;
-
-    @NotNull(message = "Household code is required")
-    private String houseHoldCode;
+//    @NotNull(message = "Identity number is required")
+//    @Pattern(regexp = "[A-Z0-9]+", message = "Invalid identity number format")
+//    private String identityNumber;
+//
+//    @NotNull(message = "Gender is required")
+//    @Pattern(regexp = "[MF]", message = "Gender must be 'M' or 'F'")
+//    private String gender;
+//
+//    @NotNull(message = "Household code is required")
+//    private String houseHoldCode;
 }

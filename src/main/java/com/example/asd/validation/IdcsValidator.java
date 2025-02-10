@@ -14,7 +14,7 @@ public class IdcsValidator implements ConstraintValidator<ValidIdcs, Long> {
     @Override
     public boolean isValid(Long idcs, ConstraintValidatorContext context) {
         if (idcs == null || idcs <= 0) {
-            throw new AidDataEnrolmentException("Invalid IDCS: must be a positive number.");
+            throw new AidDataEnrolmentException("IDCS required");
         }
         return true;
     }

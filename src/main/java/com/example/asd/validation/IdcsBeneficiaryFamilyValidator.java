@@ -1,5 +1,8 @@
 package com.example.asd.validation;
 
+import com.example.asd.exception.AidDataEnrolmentException;
+import com.example.asd.exception.CustomDomainException;
+import com.example.asd.exception.DomainException;
 import com.example.asd.repository.RsuChefMenageRepository;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
@@ -13,8 +16,8 @@ public class IdcsBeneficiaryFamilyValidator implements ConstraintValidator<Valid
     @Override
     public boolean isValid(Long idcs, ConstraintValidatorContext context) {
         if (idcs == null) {
-            return false; // IDCS cannot be null
+            throw new AidDataEnrolmentException("IDCS required");
         }
-        return rsuChefMenageRepository.existsById(idcs); // Check if IDCS exists in DB
+        return rsuChefMenageRepository.existsById(idcs);
     }
 }

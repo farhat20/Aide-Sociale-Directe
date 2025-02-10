@@ -11,14 +11,16 @@ public interface RsuChefMenageMapper {
 
     RsuChefMenageMapper INSTANCE = Mappers.getMapper(RsuChefMenageMapper.class);
 
-//    @Mapping(target = "id", source = "id")
     @Mapping(target = "idcs", source = "idcs")
     @Mapping(target = "firstNameFr", source = "first_name_fr")
     @Mapping(target = "lastNameFr", source = "last_name_fr")
     @Mapping(target = "firstNameAr", source = "first_name_ar")
     @Mapping(target = "lastNameAr", source = "last_name_ar")
     @Mapping(target = "birthDate", source = "birth_date")
-    @Mapping(target = "maritalStatustId", source = "marital_status_id")
+
+    @Mapping(target = "labelFr", source = "etatMatrimonial.label_fr")
+    @Mapping(target = "labelAr", source = "etatMatrimonial.label_ar")
+
     @Mapping(target = "gender", source = "gender")
     @Mapping(target = "seuil", source = "seuil")
     @Mapping(target = "status", source = "status")

@@ -9,7 +9,10 @@ import java.util.Optional;
 
 @Repository
 public interface RsuMemberRepository extends JpaRepository<RsuMember, Long> {
+
     Optional<RsuMember> findByIdcs(Long idcs);
+
     List<RsuMember> findAll();
+
     boolean existsById(Long idcs);
 }

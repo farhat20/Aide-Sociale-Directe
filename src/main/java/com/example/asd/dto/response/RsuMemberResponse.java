@@ -28,7 +28,9 @@ public class RsuMemberResponse {
 
     private String birthDate;
 
-    private Integer maritalStatustId;
+    private String labelAr;
+    private String labelFr;
+
     private String gender;
     private Long seuil;
     private Long status;

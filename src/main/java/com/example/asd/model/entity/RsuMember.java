@@ -28,7 +28,11 @@ public class RsuMember {
     private String first_name_ar;
     private String last_name_ar;
     private String birth_date;
-    private Integer marital_status_id;
+
+    @ManyToOne
+    @JoinColumn(name = "marital_status_id", referencedColumnName = "id")
+    private EtatMatrimonial etatMatrimonial;
+
     private String gender;
     private Long seuil;
     private Long status;

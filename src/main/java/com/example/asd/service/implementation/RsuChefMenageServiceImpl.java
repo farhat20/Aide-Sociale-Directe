@@ -15,10 +15,10 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-//@RequiredArgsConstructor
 public class RsuChefMenageServiceImpl implements RsuChefMenageService {
 
     private final RsuChefMenageRepository rsuChefMenageRepository;
+
     @Autowired
     public RsuChefMenageServiceImpl(RsuChefMenageRepository rsuChefMenageRepository) {
         this.rsuChefMenageRepository = rsuChefMenageRepository;
@@ -29,9 +29,6 @@ public class RsuChefMenageServiceImpl implements RsuChefMenageService {
         RsuChefMenage result = rsuChefMenageRepository.findByIdcs(idcs)
                 .orElseThrow(() -> new DomainException("Chef Menage not found with idcs: " + idcs));
 
-//        System.out.println("First Name (AR): " + result.getFirst_name_ar());
-//        System.out.println("Last Name (AR): " + result.getLast_name_ar());
-
         return RsuChefMenageResponse.of(result);
     }
 
@@ -40,6 +37,6 @@ public class RsuChefMenageServiceImpl implements RsuChefMenageService {
         return rsuChefMenageRepository.findAll().stream()
                 .map(RsuChefMenageResponse::of)
                 .collect(Collectors.toList());
-   }
-
+    }
 }
+

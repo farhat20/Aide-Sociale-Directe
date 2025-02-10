@@ -23,7 +23,11 @@ public class RsuChefMenage {
     private String first_name_ar;
     private String last_name_ar;
     private String birth_date;
-    private Integer marital_status_id;
+
+    @ManyToOne
+    @JoinColumn(name = "marital_status_id", referencedColumnName = "id")
+    private EtatMatrimonial etatMatrimonial;  // Renamed for clarity
+
     private String gender;
     private Long seuil;
     private Long status;
@@ -33,3 +37,4 @@ public class RsuChefMenage {
     private Integer house_hold_code;
     private String cin;
 }
+

@@ -1,9 +1,17 @@
 package com.example.asd.model.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "P_TYPE_SITUATION")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class TypeSituation {
 
     @Id
@@ -13,21 +21,5 @@ public class TypeSituation {
     private String label_fr;
 
     private String label_ar;
-
-    // Default constructor
-    public TypeSituation() {}
-
-    // Parameterized constructor (optional)
-    public TypeSituation(String labelFr, String labelAr) {
-        this.label_fr = labelFr;
-        this.label_ar = labelAr;
-    }
-
-    // Getters and Setters
-    public Integer getId() { return id; }
-
-    public String getLabelFr() { return label_fr; }
-
-    public String getLabelAr() { return label_ar; }
 }
 

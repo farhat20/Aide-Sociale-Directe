@@ -1,39 +1,39 @@
-version: '3.8'
-
-services:
-  app:
-    build: .
-    container_name: demo
-    ports:
-      - "8080:8080"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/asd
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-    depends_on:
-      - db
-    networks:
-      - backend
-
-  db:
-    image: mysql:8
-    container_name: mysql-db
-    restart: always
-    environment:
-      MYSQL_DATABASE: asd
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
-      MYSQL_ROOT_PASSWORD: root
-    ports:
-      - "3307:3306"
-    networks:
-      - backend
-    volumes:
-      - mysql_data:/var/lib/mysql
-
-networks:
-  backend:
-
-volumes:
-  mysql_data:
+#version: '3.8'
+#
+#services:
+#  app:
+#    build: .
+#    container_name: demo
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/asd
+#      SPRING_DATASOURCE_USERNAME: root
+#      SPRING_DATASOURCE_PASSWORD: root
+#      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+#    depends_on:
+#      - db
+#    networks:
+#      - backend
+#
+#  db:
+#    image: mysql:8
+#    container_name: mysql-db
+#    restart: always
+#    environment:
+#      MYSQL_DATABASE: asd
+#      MYSQL_USER: root
+#      MYSQL_PASSWORD: root
+#      MYSQL_ROOT_PASSWORD: root
+#    ports:
+#      - "3307:3306"
+#    networks:
+#      - backend
+#    volumes:
+#      - mysql_data:/var/lib/mysql
+#
+#networks:
+#  backend:
+#
+#volumes:
+#  mysql_data:

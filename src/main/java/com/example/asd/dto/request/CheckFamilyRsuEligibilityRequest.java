@@ -11,13 +11,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CheckFamilyRsuEligibilityRequest {
 
-    @NotNull(message = "Beneficiary information is required")
+    @NotNull(message = "Beneficiary request is required")
     @Valid
-    private CheckBeneficiaryFamilyRequest beneficiary;
+    private CheckBeneficiaryFamilyRequest beneficiaryRequest;
 
+    @NotNull(message = "Child request is required")
     @Valid
-    private GetInfoPartnerRequest partner;
+    private GetInfoChildRequest childRequest;
 
+    @NotNull(message = "Partner request is required")
     @Valid
-    private GetInfoChildRequest child;
+    private GetInfoPartnerRequest partnerRequest;
 }

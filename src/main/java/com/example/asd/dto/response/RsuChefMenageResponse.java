@@ -13,7 +13,7 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 
 public class RsuChefMenageResponse {
 
@@ -22,19 +22,21 @@ public class RsuChefMenageResponse {
     @ValidIdcsBeneficiaryFamily
     private Long idcs;
 
-    @JsonProperty("firstNameFr")
+//    @JsonProperty("firstNameFr")
     private String firstNameFr;
-    @JsonProperty("lastNameFr")
+//    @JsonProperty("lastNameFr")
     private String lastNameFr;
 
-    @JsonProperty("firstNameAr")
+//    @JsonProperty("firstNameAr")
     private String firstNameAr;
-    @JsonProperty("lastNameAr")
+//    @JsonProperty("lastNameAr")
     private String lastNameAr;
 
     private String birthDate;
 
-    private Integer maritalStatustId;
+    private String labelAr;
+    private String labelFr;
+
     private String gender;
     private Long seuil;
     private Long status;
