@@ -14,5 +14,8 @@ public interface RsuMemberRepository extends JpaRepository<RsuMember, Long> {
 
     List<RsuMember> findAll();
 
+//    List<RsuMember> findAllByHouse_hold_code(Integer house_hold_code); // Fetch all members by household
+
+
     boolean existsById(Long idcs);
 }

@@ -9,6 +9,9 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "D_RSU_MEMBRE_FAMILLE_AID")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)  // Une seule table pour RsuMember et Child
+@DiscriminatorColumn(name = "member_type", discriminatorType = DiscriminatorType.INTEGER)
+@DiscriminatorValue("1")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -42,3 +45,5 @@ public class RsuMember {
     private Integer house_hold_code;
     private String cin;
 }
+
+
