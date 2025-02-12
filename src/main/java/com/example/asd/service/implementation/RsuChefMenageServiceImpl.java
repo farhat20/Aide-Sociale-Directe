@@ -26,6 +26,10 @@ public class RsuChefMenageServiceImpl implements RsuChefMenageService {
 
     @Override
     public RsuChefMenageResponse rsuChefMenageResponse(Long idcs) {
+        if (String.valueOf(idcs).length() != 10) {
+            throw new DomainException("Invalid idcs value. Expected idcs = 10, but received: " + idcs);
+        }
+
         RsuChefMenage result = rsuChefMenageRepository.findByIdcs(idcs)
                 .orElseThrow(() -> new DomainException("Chef Menage not found with idcs: " + idcs));
 
